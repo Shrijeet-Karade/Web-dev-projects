@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href = "FormStyleSheet.css" type = "text/css" rel="StyleSheet">
+</head>
+<body>
+
+<h3>Form</h3>
+
+<div class="container">
+  <form onsubmit="return Validate(this)" action="successfulPage.html">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="First Name">
+    <br>
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Last Name">
+    <br>
+    <label for="phone">Phone Number</label>
+    <input type="text" id="phone" name="phonenumber" placeholder="+91-94******67">
+    <br>
+     <label for="email">Email</label>
+     <input type="text" id="email" name="email-id" placeholder="xyz@aplha.com">
+    <br>
+    <label for="address">Address</label>
+     <input type="text" id="address" name=" currentaddress" placeholder="Address">
+     <br>
+    <label for="city">City</label>
+    <select id="city" name="City">
+      <option value="Delhi">Delhi</option>
+      <option value="Mumbai">Mumbai</option>
+      <option value="Pune">Pune</option>
+      <option value="Banglore">Banglore</option>
+      <option value="Hyderabad">Hyderabad</option>
+      <option value="Other">Other</option>
+    </select>
+    <br>
+     <input type="radio" name="gender" value="male" checked> Male<br>
+     <input type="radio" name="gender" value="female"> Female<br>
+     <input type="radio" name="gender" value="other"> Other  
+     <br>
+    <input type="submit" value="Submit" class="btn">
+  </form>
+</div>
+
+<script>
+   function Validate(event)
+   {
+        var flag=true;
+        var firstName=document.getElementById("fname").value;
+        var lastName=document.getElementById("lname").value;
+        var phoneNumber=document.getElementById("phone").value;
+        var emailID=document.getElementById("email").value;
+        var address=document.getElementById("address").value;        
+      var emailExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        var numericExpression = /^[0-9]+$/;
+
+
+        if(firstName.length==0 || firstName==""||!firstName.match(/^[a-z-A-Z ]*$/))
+        {
+            document.getElementById("fname").style.borderColor = "red";
+            flag=false;
+        }
+        else
+        {
+            document.getElementById("fname").style.borderColor = "green";
+        }
+        if(lastName.length==0||lastName==""||!lastName.match(/^[a-z-A-Z ]*$/))
+        {
+            document.getElementById("lname").style.borderColor = "red";
+            flag=false;
+        }
+        else
+        {
+            document.getElementById("lname").style.borderColor = "green";
+        }
+        if(phoneNumber.length==0||phoneNumber==""||phoneNumber.length!=10||phoneNumber=="0000000000"||!phoneNumber.match(numericExpression))
+        {
+            document.getElementById("phone").style.borderColor = "red";
+             flag=false;
+        }
+
+        else
+        {
+            document.getElementById("phone").style.borderColor = "green";
+        }
+        if(!emailID.match(emailExp))
+        {
+            document.getElementById("email").style.borderColor = "red";
+             flag=false;
+        }
+        else
+        {
+            document.getElementById("email").style.borderColor = "green";
+        }
+        if(address=="")
+        {
+            document.getElementById("address").style.borderColor = "red";
+             flag=false;
+        }
+        else
+        {
+            document.getElementById("address").style.borderColor = "green";
+        }
+       
+        return flag;
+    }
+</script>
+</body>
+</html>
