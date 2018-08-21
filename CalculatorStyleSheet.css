@@ -2,7 +2,8 @@ body{
 width: 1024px;
 height:750px;
 margin-top: 200px;
-margin-left: 200px;
+margin-left: 550px;
+background-color: #484545;
 }
 .container{
 display: flex;
@@ -13,16 +14,24 @@ height:50px;
 padding: 50px;
 
 }
-.hover-style{
+.btn-success:hover{
+   background-image:none;
+   background-color:#353535;
+   color:#FFFFFF;
 
 }
-.history-tab-style{
+.history-box{
+	
+	width: 600px;
+	height:60px;
+	margin-left: 50px;
+	margin-top: 250px;
+	background-color: white;
 
 }
 .sizing{
 width:150px;
 height:75px;
-
 
 }
 .input-box{
@@ -33,4 +42,17 @@ height:75px;
 }
 .small-button{
 	width: 150px;
+}
+
+.btn-color{
+	background-color: #CB0101;
+	color:white;
+}
+.btn-color-blue{
+	background-color: #4CB6D7;
+	color:white;
+}
+.btn-color-green{
+	background-color: #CB0101;
+	color:white;
 }
